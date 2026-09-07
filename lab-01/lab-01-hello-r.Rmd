@@ -5,7 +5,9 @@ output:
   tufte::tufte_html:
     css: ../lab.css
     tufte_variant: "envisioned"
-    highlight: pygments
+    highlight: tango
+    fig_width: 7
+    fig_height: 5
   tufte::tufte_handout:
     latex_engine: xelatex
     highlight: pygments
@@ -262,13 +264,13 @@ star_data %>%
 **Your task:** Adapt the code from Exercises 2 and 3, changing the dataset to `"circle"`.
 
 **Filter, plot, and calculate correlation:**
-```{r circle-data, eval = TRUE}
+```{r circle-data, eval=TRUE}
 # Your code here
 circle_data <- datasaurus_dozen %>%
   filter(dataset == "circle")
 ```
 
-```{r circle-plot, fig.fullwidth=TRUE, eval = TRUE, fig.alt="Scatterplot of y versus x for the circle dataset, with points forming the outline of a circle"}
+```{r circle-plot, eval=TRUE, fig.alt="Scatterplot of y versus x for the circle dataset", fig.fullwidth=TRUE, fig.height=6, fig.width=6}
 # Your code here
 ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
   geom_point()
@@ -296,7 +298,7 @@ Facet by the dataset variable, placing the plots in a 3 column grid, and don't a
 
 5.  Finally, let's plot all datasets at once. In order to do this we will make use of faceting.
 
-```{r all-viz, eval=TRUE, fig.fullwidth=TRUE, fig.alt="Grid of scatterplots, one per dataset in the Datasaurus Dozen, arranged in 3 columns and colored by dataset, with no legend."}
+```{r all-viz, eval=TRUE, fig.alt="Grid of scatterplots", fig.fullwidth=TRUE, fig.height=10, fig.width=8}
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
   geom_point()+
   facet_wrap(~ dataset, ncol = 3) +
