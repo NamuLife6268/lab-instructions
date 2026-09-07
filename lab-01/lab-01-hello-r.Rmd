@@ -251,7 +251,7 @@ star_data %>%
 
 **Write your answers:**
 
-- The correlation coefficient for the star dataset is: -0.0629611.
+- The correlation coefficient for the star dataset is: -0.063.
 
 - Compared to the dino dataset (r = -0.06447185), the star dataset's correlation is: Very similar but it is slightly closer to zero.
 
@@ -262,25 +262,31 @@ star_data %>%
 **Your task:** Adapt the code from Exercises 2 and 3, changing the dataset to `"circle"`.
 
 **Filter, plot, and calculate correlation:**
-```{r circle-data, eval = FALSE}
+```{r circle-data, eval = TRUE}
 # Your code here
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 ```
 
-```{r circle-plot, fig.fullwidth=TRUE, eval = FALSE, fig.alt="UPDATE THIS: describe what your circle-dataset scatterplot shows, for screen-reader accessibility."}
+```{r circle-plot, fig.fullwidth=TRUE, eval = TRUE, fig.alt="Scatterplot of y versus x for the circle dataset, with points forming the outline of a circle"}
 # Your code here
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-```{r circle-correlation, eval = FALSE}
+```{r circle-correlation, eval = TRUE}
 # Your code here
+circle_data %>%
+  summarize(r = cor(x, y))
 ```
 
 **Write your answers:**
 
-- The correlation coefficient for the circle dataset is: [type your answer here]
+- The correlation coefficient for the circle dataset is: -0.068.
 
-- Compared to the dino dataset, the circle dataset's correlation is: [type your answer here]
+- Compared to the dino dataset, the circle dataset's correlation is: Very similar but slightly more negative.
 
-- What do you notice about the correlation coefficients for dino, star, and circle? [type your answer here]
+- What do you notice about the correlation coefficients for dino, star, and circle? They are nearly identical and show very weak negative linear relationships despite having very different shapes.
 
 🧶 ✅ ⬆️ *You should pause again, commit changes with the commit message "Added answer for Ex 4", and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
