@@ -188,7 +188,7 @@ The original Datasaurus (`dino`) was created by Alberto Cairo in [this great blo
 
 2.  Plot `y` vs. `x` for the `dino` dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset.
 
-The scatterplot forms the shape of a dinosaur, and the correlation coefficient between x and y is approximately -0.064.
+**Your answer:** The scatterplot forms the shape of a dinosaur, and the correlation coefficient between x and y is approximately -0.064.
 
 Below is the code you will need to complete this exercise. Basically, the answer is already given, but you need to include relevant bits in your Rmd document and successfully knit it and view the results.
 
